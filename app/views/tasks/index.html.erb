@@ -1,0 +1,9 @@
+<h1>My tasks</h1>
+<% @index.each do |task| %>
+  <input type="checkbox" id="task" name="task" disabled <%= "checked" if task.completed %>>
+  <label for="vehicle1"><%= link_to task.title, task_path(task) %></label>
+  <label for="vehicle1"><%= link_to "delete", task_path(task),method: :delete, data: { confirm: "Delete #{task.title}?" } %></label>
+  <br>
+
+  <% end %>
+
